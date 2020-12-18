@@ -19,6 +19,12 @@ email    CHAR(128),
 password CHAR(64)
 );
 
+//Добавление столбца в таблицу MYSQL
+ALTER TABLE Employees 
+ADD COLUMN middle_name CHAR(10) NULL 
+AFTER first_name;
+                                        
+                                        
                                         
 //Чтение записей
 SELECT <перечисление полей> FROM <таблица>
