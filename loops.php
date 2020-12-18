@@ -36,7 +36,22 @@ $categories = ["Видеоигры","Животные","Люди","Наука","
             print ('<a href="#">' . $cat .'<a>');
             $index = $index + 1;
         } ?>   
-    
-</nav>
-
+     </nav>
 </div>
+
+
+//FOREACH
+foreach (<массив> as $key => $value) {
+    <тело цикла>
+}
+//На каждой итерации цикла в переменных $key и $val будут значения следующего элемента массива       
+//FOREACH IN HTML
+<?php foreach ($gifs as $key = $val): ?>
+        ...
+<?php endforeach; ?>
+        
+        
+        
+
+
+
