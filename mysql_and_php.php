@@ -109,4 +109,15 @@ mysqli_stmt_execute($stmt);
 
 
 
+//Упрощение
+$sql =
+"SELECT * FROM gifs WHERE id = ?";
+$res = mysqli_prepare($link, $sql);
+$stmt = db_get_prepare_stmt($link, $sql, [$_GET['id']]);//принимает ресурс соединения, sql запрос и массив со значениями, 
+//возвращает подготовленное выражение с добавленными туда значениями,которое останется только выполнить и получить результат
+mysqli_stmt_execute($stmt);
+$res = mysqli_stmt_get_result($stmt);//Чтобы получить объект результата после выполнения подготовленного выражения
+$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
+
+
 
