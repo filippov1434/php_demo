@@ -140,3 +140,11 @@ print($gif_list[0]['title']);
 
 // Получаем случайный индекс
 $rand = array_rand($gif_list, 1);
+
+
+
+
+//ДЛЯ ОБРАБОТКИ ЗАПРОСОВ ИЗ БД
+foreach ($rows as $row) {
+   print("Категория: ". $row['name']);
+}
