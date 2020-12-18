@@ -23,6 +23,10 @@ password CHAR(64)
 ALTER TABLE Employees 
 ADD COLUMN middle_name CHAR(10) NULL 
 AFTER first_name;
+
+                                        
+//Удаление столбца из таблицы
+ALTER TABLE tbl_Country DROP IsDeleted                                      
                                         
                                         
                                         
