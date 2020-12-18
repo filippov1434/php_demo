@@ -45,8 +45,25 @@ $last_id = mysqli_insert_id($con);
 <?php
 $con = mysqli_connect("localhost", "root", "","giftube");
 $sql ="SELECT id, name FROM categories";
-$result = mysqli_query($con, $sql);
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$result = mysqli_query($con, $sql); //объект результата
+$rows = mysqli_fetch_all($result, MYSQLI_ASSOC); //Преобразуем объект результата в двумерный массив с записями
 foreach ($rows as $row) {
    print("Категория: ". $row['name']);
 }
+
+// $rows = [
+//  ['id' = 1, 'name' = 'frexin'],
+//  ['id' = 2, 'name' = 'timon'],
+//  ['id' = 3, 'name' = 'daredevil'],
+// ];
+
+
+//Получение единственной записи в виде ассоциативного массива MYSQLI_FETCH_ASSOC
+$sql ="SELECT id, name FROM users";
+$res = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($res);
+//$row = ['id' = 1, 'name' = 'frexin'];
+
+//Получение количества записей, возвражщаемых запросом MYSQLI_NUM_ROWS()
+$records_count = mysqli_num_rows($result);
+
