@@ -37,8 +37,12 @@ WHERE email = 'vasya@mail.ru';
 //Операторы
 = != > < 
 IN()нахождение в списке
+IS NULL проверка
+LIKE нестрогий поиск
+BETWEEN ..AND ..                                        
 
-                                        //Сортировка
+                                        
+ //Сортировка
 SELECT * FROM categories ORDER BY name ASC
 
 //Запись данных
