@@ -64,6 +64,15 @@ $res = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($res);
 //$row = ['id' = 1, 'name' = 'frexin'];
 
+
 //Получение количества записей, возвражщаемых запросом MYSQLI_NUM_ROWS()
 $records_count = mysqli_num_rows($result);
+
+
+// Подстановка параметра из формы ( но с уязвимостью)
+<?php
+$con = mysqli_connect("localhost", "root", "", "giftube");
+$id = $_GET['id'];
+$sql ="DELETE FROM gifs WHERE id = '$id'";
+$result = mysqli_query($con, $sql);
 
