@@ -29,8 +29,7 @@ SELECT id, email, password FROM users;
 //Поиск-чтение с условием
 SELECT <перечисление полей> FROM <таблица>
 WHERE <имя поля> <оператор> <значение>
-                                        
-                             
+                                                                 
 SELECT id, email, password FROM users
 WHERE email = 'vasya@mail.ru';
 
@@ -51,3 +50,43 @@ SET <имя столбца1> = <значение2>, <имя столбца2> = <
 
 INSERT INTO users
 SET email = 'vasya@mail.ru', password = 'secret';
+
+                                        
+                                        
+//Обновление записей
+UPDATE <таблица> SET <имя столбца1> = <значение2>
+WHERE <имя столбца> = <значение>                     
+                                        
+UPDATE users SET password = 'strongsecret’
+WHERE email = 'vasya@mail.ru';                                        
+                              
+
+//Удаление записей  DELETE FROM                                      
+DELETE FROM <таблица> WHERE <имя столбца> = <значение>                                        
+DELETE FROM users WHERE email = 'vasya@mail.ru';                                        
+                                        
+
+                                        
+//Обобщение  GROUP BY                                      
+SELECT colname, SUM(cnt) FROM table GROUP BY colname                                        
+  
+                                        
+//ОБЪЕДИНЕНИЯ JOIN                                        
+SELECT <перечисление полей> FROM <таблица1>
+JOIN <таблица2> ON <условие объединения>                                        
+                                        
+SELECT c.id, email, content FROM comments c
+JOIN users u
+ON c.user_id = u.id;                                        
+
+    
+                                        
+                                        
+//Индексы
+CREATE INDEX <имя индекса> ON <таблица>(<поле>)                                        
+CREATE INDEX c_text ON comments(content);                                  
+                                        
+CREATE UNIQUE INDEX <имя индекса> ON <таблица>(<поле>)         
+CREATE UNIQUE INDEX email ON users(email);                                        
+                                        
+                                        
