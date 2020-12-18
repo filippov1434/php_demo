@@ -51,7 +51,8 @@ foreach (<массив> as $key => $value) {
 <?php endforeach; ?>
         
         
-        
+ foreach ($resultset as $result){
+ //... etc...       
 
 
 
