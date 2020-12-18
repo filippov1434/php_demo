@@ -19,6 +19,28 @@ email    CHAR(128),
 password CHAR(64)
 );
 
+                                        
+//Чтение записей
+SELECT <перечисление полей> FROM <таблица>
+SELECT id, email, password FROM users;
+
+                                        
+                                        
+//Поиск-чтение с условием
+SELECT <перечисление полей> FROM <таблица>
+WHERE <имя поля> <оператор> <значение>
+                                        
+//Операторы
+=
+                                        
+                                        
+SELECT id, email, password FROM users
+WHERE email = 'vasya@mail.ru';
+
+                                        
+//Сортировка
+SELECT * FROM categories ORDER BY name ASC
+
 //Запись данных
 INSERT INTO <название таблицы>
 SET <имя столбца1> = <значение2>, <имя столбца2> = <значение2>
