@@ -76,3 +76,37 @@ $id = $_GET['id'];
 $sql ="DELETE FROM gifs WHERE id = '$id'";
 $result = mysqli_query($con, $sql);
 
+
+//способы защиты 
+//(ПРИВЕДЕНИЕ К ИДЕНТИФИКАТОРУ)
+$id = intval($_GET['id']);
+$sql ='DELETE * FROM gifs WHERE `id`='. $id;
+
+//Экранирование mysqli_real_escape_string() 
+$con = mysqli_connect("localhost", "root", "","giftube");
+$safe_email = mysqli_real_escape_string($con, $_POST['email']);//заменяет кавычки
+$sql ="INSERT INTO users SET `email` = 'user@ml.ru', `password` = '$safe_email'";
+$result = mysqli_query($con, $sql);
+
+
+
+//Разделение кода и данных в запросе
+INSERT INTO users (email, name) VALUES (?, ?) //готовим запрос, но вместо значений плейсхолдеры
+
+<?php
+$con = mysqli_connect("localhost", "root", "", "giftube");
+//готовим данные
+$name = $_POST['name'];
+$email = $_POST['email'];
+//готовим запрос, но вместо значений плейсхолдеры
+$sql ='INSERT INTO users (name, email) VALUES (?, ?)';
+//подготавливаем выражение
+$stmt = mysqli_prepare($con, $sql);
+//передаем в выражение значения от пользователя
+mysqli_stmt_bind_param($stmt,'ss', $name, $email);
+//выполняем выражение
+mysqli_stmt_execute($stmt);
+
+
+
+
