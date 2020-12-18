@@ -30,15 +30,15 @@ SELECT id, email, password FROM users;
 SELECT <перечисление полей> FROM <таблица>
 WHERE <имя поля> <оператор> <значение>
                                         
-//Операторы
-=
-                                        
-                                        
+                             
 SELECT id, email, password FROM users
 WHERE email = 'vasya@mail.ru';
 
-                                        
-//Сортировка
+//Операторы
+= != > < 
+IN()нахождение в списке
+
+                                        //Сортировка
 SELECT * FROM categories ORDER BY name ASC
 
 //Запись данных
