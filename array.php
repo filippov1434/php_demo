@@ -1,4 +1,5 @@
 <?php
+// ПРОСТЫЕ МАССИВЫ
 
 // объвление пустого массива
 $categories = [];
@@ -62,3 +63,80 @@ $categories = array_merge($categories, $new_cats);
 
 // Отсортировать значения массива в алфавитном порядке
 sort($categories);
+?>
+
+
+
+
+
+
+
+// АССОЦИАТИВНЫЕ МАССИВЫ
+<?php
+$gif = [
+	'gif' => '/uploads/preview_gif58d28ce80e3a9.gif',
+	'title' => 'Енотик',
+	'likes_count' => 0
+];
+// Добавить новое значение с ключом
+$gif['author'] = "frexin";
+
+// Получить значение по ключу
+print($gif['title']);
+
+// Получить все ключи из массива
+$keys = array_keys($gif);
+
+// Получить последний ключ
+$last_key = array_pop($keys);
+
+// Получить значение по этому ключу
+$last_val = $gif[$last_key];
+
+?>
+
+
+
+
+
+
+
+
+//ДВУМЕРНЫЕ МАССИВЫ
+<?php
+$first_gif = [
+	'gif' => '/uploads/preview_gif58d28ce80e3a9.gif',
+	'title' => 'Енотик',
+	'likes_count' => 0
+];
+
+$second_gif = [
+	'gif' => '/uploads/preview_gif58d29cfc805a2.gif',
+	'title' => 'Кот-доминатор',
+	'likes_count' => 0
+];
+
+// Создаем двумерный массив
+$gif_list = [$first_gif, $second_gif];
+
+$gif_list = [
+	[
+		'gif' => '/uploads/preview_gif58d28ce80e3a9.gif',
+		'title' => 'Енотик',
+		'likes_count' => 0
+	],
+	[
+		'gif' => '/uploads/preview_gif58d29cfc805a2.gif',
+		'title' => 'Кот-доминатор',
+		'likes_count' => 0
+	]
+];
+
+
+
+// Обращение к значениям в двумерном массиве
+print($gif_list[0]['title']);
+
+
+// Получаем случайный индекс
+$rand = array_rand($gif_list, 1);
