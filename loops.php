@@ -54,5 +54,13 @@ foreach (<массив> as $key => $value) {
  foreach ($resultset as $result){
  //... etc...       
 
-
+        
+        
+// Примеры выполнения
+        
+$my_object_from_query = [
+    ["id" => 1, "name" => "frexin"],
+    ["id" => 2, "name" => "timon"],
+    ["id" => 3, "name" => "daredevil"]
+ ];
 
