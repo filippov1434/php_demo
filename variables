@@ -1,0 +1,34 @@
+1) 8 types of variables:
+int
+double
+string
+bool
+array
+NULL
+resource
+object
+
+2) gettype($...); or var_dump($...) - to get info about type of variable
+
+3) type's converting
+settype($var, "string") - universal form
+intval($var)/boolval($var) - exact form
+
+4) type coversion
+$var1 = (bool)$var2;
+
+5) check the type functions
+is_bool($var);
+
+6) check existence
+isset($var);
+
+7) check empty
+empty($var);
+
+8) define constant or check
+define("NAME_OF_VAR", "value", true);
+defined($var);
+
+9) remove the var;
+unset($var);
