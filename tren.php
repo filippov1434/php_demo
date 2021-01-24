@@ -1,4 +1,8 @@
 <?php
+
+//https://codernet.ru/books/php/zadachnik_po_php_s_resheniyami/
+
+
 echo '<h2> Week 1 Training </h2>';
 
 print("1.1 Арифметика <br>");
